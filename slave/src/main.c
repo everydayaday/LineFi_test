@@ -854,10 +854,10 @@ void main (void)
 			}
 			else { //떨어질 때
 				static uint8 su8Cnt = 0;
-				su8Cnt++;
-				LED_R = su8Cnt&1;
-				LED_G = (su8Cnt>>1)&1;
-				LED_B = (su8Cnt>>2)&1;
+				su8Cnt++; //7 ->0x111
+				LED_R = su8Cnt&1; //1
+				LED_G = (su8Cnt>>1)&1;//1
+				LED_B = (su8Cnt>>2)&1; //1
 
 //				MOTOR_EN = su8Cnt&1;
 				MOTOR_CW = (su8Cnt>>1)&1;
